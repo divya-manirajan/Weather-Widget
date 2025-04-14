@@ -1,9 +1,10 @@
 'use client'
 
 import { Info, Wind } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [location, setLocation] = useState("")
   const [moreInfo, setMoreInfo] = useState(false)
   const [results, setResults] = useState(
@@ -82,7 +83,7 @@ export default function page() {
             {results.feelslike_f && <p className="text-base">Feels Like: {results.feelslike_f}&deg;F</p>}
 
             {results.icon && results.text && <div className="flex flex-row items-center">
-              <img src={results.icon}></img>
+              <Image src={results.icon} />
               <p className="min-w-[64px] text-center">{results.text}</p>
             </div>}
 
